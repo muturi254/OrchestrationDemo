@@ -7,7 +7,7 @@ var redis = require('redis');
 
 // Connect to redis server running createClient API is called with-- 6379, a well-known port to which the
 // redis server listens to -- redis, is the name of the service (container) that runs redis server
-var client = redis.createClient(6379, 'redis');
+var client = redis.createClient({ url: 'redis://redis:6379' });
 
 // Set the key value pair that we are going to be querying in the redis server. Here all the keys proceeds with "/", because
 // URL parser always have "/" as its first character. Again, feel free to add more of these pairs.
